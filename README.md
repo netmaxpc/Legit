@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Databutton app
 
 This project consists of a FastAPI backend server and a React + TypeScript frontend application exported from Databutton.
@@ -27,3 +28,7 @@ make run-frontend
 The backend server runs on port 8000 and the frontend development server runs on port 5173. The frontend Vite server proxies API requests to the backend on port 8000.
 
 Visit <http://localhost:5173> to view the application.
+=======
+# Legit
+Scam detection
+>>>>>>> 5cb52c2702096059189a1e55b1b765d456d84085
