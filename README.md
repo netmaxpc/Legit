@@ -1,0 +1,2 @@
+# Legit
+Scam detection
