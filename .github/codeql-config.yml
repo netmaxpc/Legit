@@ -1,0 +1,11 @@
+paths:
+  - src
+  - lib
+paths-ignore:
+  - node_modules
+  - '**/*.test.js'
+  - '**/*.spec.js'
+  - '**/tests/**'
+
+queries:
+  - uses: security-and-quality
