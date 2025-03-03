@@ -1,65 +1,18 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
-version: 2
-updates:
-  # NPM dependencies for React Native
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-    target-branch: "develop"
-    labels:
-      - "dependencies"
-      - "security"
+      interval: "daily"
+    versioning-strategy: auto
+    allow:
+      - dependency-type: "all"
     commit-message:
-      prefix: "fix(deps)"
-    groups:
-      react-packages:
-        patterns:
-          - "react"
-          - "react-*"
-          - "@react-*"
-      dev-dependencies:
-        dependency-type: "development"
+      prefix: "fix"
+      prefix-development: "chore"
+      include: "scope"
 
-  # GitHub Actions updates
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-    labels:
-      - "dependencies"
-      - "actions"
-    commit-message:
-      prefix: "ci"
-
-  # CocoaPods for iOS
-  - package-ecosystem: "bundler"
-    directory: "/ios"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "ios"
-    commit-message:
-      prefix: "fix(ios)"
-
-  # Gradle for Android
-  - package-ecosystem: "gradle"
-    directory: "/android"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "android"
-    commit-message:
-      prefix: "fix(android)"
