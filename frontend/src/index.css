@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chrome and Black Metal Theme Variables */
+:root {
+  --chrome-gradient: linear-gradient(135deg, #D7D7D7 0%, #F5F5F5 50%, #D7D7D7 100%);
+  --metal-gradient: linear-gradient(135deg, #202020 0%, #505050 50%, #202020 100%);
+  --chrome-shine: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* Dark mode with chrome and metal theme */
+    --background: 0 0% 12%; /* Dark metal background */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 84%; /* Chrome color */
+    --primary-foreground: 0 0% 12%;
+    --secondary: 0 0% 31%; /* Metal accent */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 96%; /* Highlight color */
+    --accent-foreground: 0 0% 12%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 31%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 84%;
+    --chart-1: 0 0% 84%; /* Chrome */
+    --chart-2: 0 0% 31%; /* Metal accent */
+    --chart-3: 0 0% 96%; /* Highlight */
+    --chart-4: 0 0% 20%; /* Dark metal */
+    --chart-5: 0 0% 50%;  /* Mid-tone */
+    
+    /* Custom cyberpunk theme colors updated to chrome/metal */
+    --cyber: 0 0% 84%; /* Chrome */
+    --cyber-foreground: 0 0% 12%;
+    --cyber-border: 0 0% 31%;
+    --cyber-glow: 0 0% 96%;
+    --cyber-accent: 0 0% 96%; /* Highlight */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground dark;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Chrome and metal utility classes */
+@layer utilities {
+  .chrome-gradient {
+    background: var(--chrome-gradient);
+  }
+  
+  .metal-gradient {
+    background: var(--metal-gradient);
+  }
+  
+  .chrome-shine {
+    position: relative;
+  }
+  
+  .chrome-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: var(--chrome-shine);
+    animation: chrome-shine 2s infinite;
+  }
+  
+  @keyframes chrome-shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+}
