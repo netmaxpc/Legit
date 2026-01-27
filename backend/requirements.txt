@@ -2,7 +2,7 @@
 databutton==0.38.34
 ipykernel==6.29.5
 fastapi==0.111.0
-python-multipart==0.0.9
+python-multipart==0.0.22
 uvicorn[standard]==0.29.0
 
 openai
